@@ -171,6 +171,10 @@ transporter.verify((error, success) => {
   }
 });
 
+app.get("/", (req,res) =>{
+  res.json("get api called");
+})
+
 // API endpoint to handle form submission
 app.post("/sendEmail", (req, res) => {
   const { email, message, number, name } = req.body;
@@ -209,3 +213,5 @@ app.post("/sendEmail", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+module.exports = app;
