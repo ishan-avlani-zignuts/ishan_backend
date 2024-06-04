@@ -83,18 +83,18 @@ const PORT = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
 //for local
-app.use(cors());
+// app.use(cors());
 
 let attempts = 0;
 let delay = 1000;
 //for live
 
-// const corsOptions = {
-//   origin: "https://ishan-avlani-portfolio.vercel.app",
-//   optionsSuccessStatus: 200,
-// };
+const corsOptions = {
+  origin: "https://ishan-avlani-portfolio.vercel.app",
+  optionsSuccessStatus: 200,
+};
 
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
 // const transporter = nodemailer.createTransport({
 //   service: "Gmail",
